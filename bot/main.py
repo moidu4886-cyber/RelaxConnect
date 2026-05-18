@@ -18,11 +18,11 @@ UserMiddleware,
 )
 
 async def health_check(request):
-return web.Response(text="Bot is running")
+    return web.Response(text="Bot is running")
 
 async def start_webserver():
-app = web.Application()
-app.router.add_get("/", health_check)
+    app = web.Application()
+    app.router.add_get("/", health_check)
 
 ```
 runner = web.AppRunner(app)
