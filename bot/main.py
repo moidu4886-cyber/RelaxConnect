@@ -16,7 +16,6 @@ from bot.middlewares import (
     MediaBlockMiddleware,
     UserMiddleware,
 )
-```python
 async def main():
     await start_webserver()
     await dp.start_polling(bot)
