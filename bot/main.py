@@ -72,4 +72,3 @@ await dp.start_polling(
 
 if **name** == "**main**":
 asyncio.run(main())
-
