@@ -48,6 +48,24 @@ async def main() -> None:
     root = setup_routers()
     root.include_router(admin_router)
     dp.include_router(root)
+    ```python
+
+from aiohttp import web
+import asyncio
+
+async def health_check(request):
+    return web.Response(text="Bot is running")
+
+async def start_webserver():
+    app = web.Application()
+    app.router.add_get("/", health_check)
+
+    runner = web.AppRunner(app)
+    await runner.setup()
+
+    site = web.TCPSite(runner, "0.0.0.0", 8000)
+    await site.start()
+```
 
     await dp.start_polling(bot, allowed_updates=dp.resolve_used_update_types())
 
