@@ -53,7 +53,7 @@ async def main() -> None:
     root = setup_routers()
     root.include_router(admin_router)
     dp.include_router(root)
-    ```python
+    
 
 from aiohttp import web
 import asyncio
@@ -70,7 +70,7 @@ async def start_webserver():
 
     site = web.TCPSite(runner, "0.0.0.0", 8000)
     await site.start()
-```
+
 
     await dp.start_polling(bot, allowed_updates=dp.resolve_used_update_types())
 
